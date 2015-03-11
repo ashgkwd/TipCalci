@@ -60,7 +60,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        var totalBill = myValues[myArray[indexPath.row - 1]]! + "\(tipCalciObj.billAmount)"
+        var totalBill = (myValues[myArray[indexPath.row - 1]]! as NSString).doubleValue + (tipCalciObj.billAmount)
         let myAlert = UIAlertController(title: "Your Bill Details", message: "Your Total Bill Amount After Tip Is \(totalBill)", preferredStyle: UIAlertControllerStyle.Alert)
         myAlert.addAction(UIAlertAction(title: "Pay It", style: UIAlertActionStyle.Default, handler:nil))
         self.presentViewController(myAlert, animated: true, completion: nil)
